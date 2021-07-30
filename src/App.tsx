@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Layout from "components/layout";
+import { actions } from "redux/main/slice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Post from "components/post";
+import { postsSelectors } from "redux/main/selectors";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const posts = useSelector(postsSelectors);
+  useEffect(() => {
+    dispatch(actions.fetch());
+  }, [dispatch]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      {posts.map((post) => (
+        <Post
+          id={post.id}
+          body={post.body}
+          title={post.title}
+          comments={post.comments}
+        />
+      ))}
+    </Layout>
   );
-}
+};
 
 export default App;

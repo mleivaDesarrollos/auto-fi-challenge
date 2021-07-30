@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Coding Challenge - AutoFI - Frontend ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello, i'm Maximiliano Leiva, can you call me Max. Nice to meet you! 
 
-## Available Scripts
+in this file i will go to try to document some steps i did to complete this code challenge.
 
-In the project directory, you can run:
+## Installation
 
-### `yarn start`
+- Download this repository on your local machine with ***git clone***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Run ***yarn install***
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Run **yarn start**
 
-### `yarn test`
+  ![Screenshot_20210730_191429](README.assets/Screenshot_20210730_191429.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Libraries used on this project
 
-### `yarn build`
+- React With typescript
+- Redux for state management
+- Redux-Saga for asynchronous calls.
+- React-JSS for styling
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Design path
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Because i don't want to spend a lot of time to building the UI, i take a forum template from the web for inspiration. There isn't so much work in design because this part of the process can take a lot of time to get good results.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Notes
 
-### `yarn eject`
+- i could have use a loader for fetching post, but looking at fetch not delay more than few milliseconds, i decide not add it
+- Test are very simple
+- I use a personal library who uses axios to fetch posts and comments
+- To Add comments you need first to get comments from that post
+- There are some points of improvement, specially on reducer part. And encountered some issues using React-JSS with typescript. If i went with styled components probably be better for next time
+- Next.JS probably suits better for this application. Blogs and forums takes more advantage from CEO. I decided to use create-react-app because i work a lot more time with it, and i feel comfortable.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

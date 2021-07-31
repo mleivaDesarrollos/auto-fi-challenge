@@ -15,6 +15,7 @@ const App = () => {
     <Layout>
       {posts.map((post) => (
         <Post
+          key={post.id}
           id={post.id}
           body={post.body}
           title={post.title}

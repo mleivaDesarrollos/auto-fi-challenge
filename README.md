@@ -1,8 +1,8 @@
 # Coding Challenge - AutoFI - Frontend ReactJS
 
-Hello, i'm Maximiliano Leiva, can you call me Max. Nice to meet you! 
+Hello, I am Maximiliano Leiva, and you call me Max. Nice to meet you! 
 
-in this file i will go to try to document some steps i did to complete this code challenge.
+In this file I will try to document some steps I did to complete this code challenge.
 
 ## Installation
 
@@ -16,21 +16,20 @@ in this file i will go to try to document some steps i did to complete this code
 
 ## Libraries used on this project
 
-- React With typescript
+- React With TypeScript
 - Redux for state management
 - Redux-Saga for asynchronous calls.
-- React-JSS for styling
+- Styled-Components for component styling
 
-## Design path
+## UI Design
 
-Because i don't want to spend a lot of time to building the UI, i take a forum template from the web for inspiration. There isn't so much work in design because this part of the process can take a lot of time to get good results.
+I used a forum template from the web for inspiration in the UI. I didn't spend a lot of time on the design because it can be time consuming and I only got 3 hours to implement fully.
 
-## Notes
+## Design Considerations
 
-- i could have use a loader for fetching post, but looking at fetch not delay more than few milliseconds, i decide not add it
-- Test are very simple
-- I use a personal library who uses axios to fetch posts and comments
-- To Add comments you need first to get comments from that post
-- There are some points of improvement, specially on reducer part. And encountered some issues using React-JSS with typescript. If i went with styled components probably be better for next time
-- Next.JS probably suits better for this application. Blogs and forums takes more advantage from CEO. I decided to use create-react-app because i work a lot more time with it, and i feel comfortable.
+- I could have used a loader for fetching posts, the fetch delay wasn't more than a few milliseconds, so I decided not to add it
+- I use a personal library which uses axios to fetch posts and comments
+- To Add comments you first need to get comments from that post
+- There are a lot of improvements to be made, specially on the reducer part.
+- Next.JS would have worked well for this application too. Blogs and forums takes more advantage of CEO. I decided to use create-react-app because I work a lot with it, and I feel comfortable using it.
 

@@ -3,18 +3,22 @@ import Comment from "./Comment";
 import { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from "redux/main/slice";
-import useStyles from "./styles";
+import styled from "styled-components";
 
 type CommentsProps = {
   postId: number;
   list: Comments[] | null | undefined;
 };
 
+const Container = styled.div`
+  border: 1px solid #c3c3c3;
+  margin-bottom: 2rem;
+`;
+
 const CommentsComponent = ({ list, postId }: CommentsProps) => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState("");
   const fieldName = `comment-${postId}`;
-  const classNames = useStyles();
   if (!list || list.length === 0) {
     return null;
   }
@@ -28,7 +32,7 @@ const CommentsComponent = ({ list, postId }: CommentsProps) => {
     dispatch(actions.addComment({ postId, comment }));
   };
   return (
-    <div className={classNames.commentsContainer}>
+    <Container>
       {list.map((comment) => (
         <Comment
           key={comment.id}
@@ -49,7 +53,7 @@ const CommentsComponent = ({ list, postId }: CommentsProps) => {
         />
         <button type="submit">Send</button>
       </form>
-    </div>
+    </Container>
   );
 };
 

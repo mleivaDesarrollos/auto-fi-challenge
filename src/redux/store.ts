@@ -7,13 +7,11 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 
-const { run: runSaga } = sagaMiddleware;
-
 const store = configureStore({
   reducer,
   middleware,
 });
 
-runSaga(sagas);
+sagaMiddleware.run(sagas);
 
 export default store;

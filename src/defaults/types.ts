@@ -13,3 +13,8 @@ export type Comments = {
   email: string;
   body: string;
 };
+
+export type PaginationNumber = {
+  page: number;
+  size: number;
+};

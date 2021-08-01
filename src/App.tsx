@@ -1,27 +1,27 @@
+import Pagination from "components/app/Pagination";
 import Layout from "components/layout";
-import { actions } from "redux/main/slice";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Post from "components/post";
-import { postsSelectors } from "redux/main/selectors";
+import { useApp } from "hooks/useApp";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const posts = useSelector(postsSelectors);
-  useEffect(() => {
-    dispatch(actions.fetch());
-  }, [dispatch]);
+  const { posts, handleSearchPosts, handleChangePagination, totals } = useApp();
   return (
-    <Layout>
-      {posts.map((post) => (
-        <Post
-          key={post.id}
-          id={post.id}
-          body={post.body}
-          title={post.title}
-          comments={post.comments}
+    <Layout onPostSearch={handleSearchPosts}>
+      <>
+        {posts.map((post) => (
+          <Post
+            key={post.id}
+            id={post.id}
+            body={post.body}
+            title={post.title}
+            comments={post.comments}
+          />
+        ))}
+        <Pagination
+          onChangePagination={handleChangePagination}
+          totals={totals}
         />
-      ))}
+      </>
     </Layout>
   );
 };

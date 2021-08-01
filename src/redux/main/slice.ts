@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Comments, Posts } from "defaults/types";
+import { Comments, PaginationNumber, Posts } from "defaults/types";
 
 type State = {
   posts: Posts[];
+  search: string;
+  pagination: PaginationNumber;
 };
 
 type AddCommentPayload = {
@@ -12,6 +14,11 @@ type AddCommentPayload = {
 
 const initialState: State = {
   posts: [],
+  search: "",
+  pagination: {
+    page: 1,
+    size: 10,
+  },
 };
 
 const mainSlice = createSlice({
@@ -36,6 +43,13 @@ const mainSlice = createSlice({
       });
     },
     fetchCommentsFailure: () => {},
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
+    },
+    setPagination: (state, action: PayloadAction<PaginationNumber>) => {
+      state.pagination.page = action.payload.page;
+      state.pagination.size = action.payload.size;
+    },
     addComment: (state, action: PayloadAction<AddCommentPayload>) => {
       state.posts = state.posts.map((post) => {
         if (post.id !== action.payload.postId) {

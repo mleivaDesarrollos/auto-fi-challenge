@@ -9,6 +9,7 @@ const Article = styled.article`
   box-shadow: 1px 1px 2px 2px #e3e3e3;
   padding: 2rem;
   margin-top: 2rem;
+  width: 100%;
   & button {
     outline: none;
     border: none;

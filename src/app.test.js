@@ -7,7 +7,7 @@ import App from "./App";
 
 test("checks if the footer and the navigation are loaded", async () => {
   render(<App />);
-  expect(screen.getByText(/navigation/i)).toBeInTheDocument();
+  expect(screen.getByPlaceholderText(/search post title/i)).toBeInTheDocument();
   expect(screen.getByText(/footer/i)).toBeInTheDocument();
 });
 
